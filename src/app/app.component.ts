@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Debug, setupEnvironment } from 'ng-debug-decorator';
+// import { Debug } from 'ng-debug-decorator';
 import { environment } from 'src/environments/environment';
-
-setupEnvironment(environment);
+import { Debug } from 'ng-debug-decorator';
+// import { Debug } from './debug.decorator';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +13,20 @@ export class AppComponent {
   title = 'ng-debug-decorator-client';
 
   ngOnInit() {
+
     this.sayHi();
+
+    if (!environment.production) {
+      this.sayBye();
+    }
   }
 
   @Debug()
   sayHi() {
-    alert("I am debug mode code");
+    alert('I am debug code');
+  }
+
+  sayBye() {
+    alert('Me too!');
   }
 }

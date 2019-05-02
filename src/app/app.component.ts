@@ -21,15 +21,3 @@ export class AppComponent {
     alert("I am debug mode code");
   }
 }
-
-/*
-Angular case
-1. Debug() - No output in prod
-2. Debug(true) - No output in prod
-3. Debug(false) - Output in prod
-
-Nodejs case
-1. Debug() - No output in output
-2. Debug(true) - No output in prod
-3. Debug(false) - Output in prod
-*/
